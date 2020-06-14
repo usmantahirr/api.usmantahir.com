@@ -3,6 +3,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 
+const home = require("./src/routes/home");
+const tretton = require("./src/routes/tretton");
+
 app.use(cors());
 app.use(
   bodyParser.urlencoded({
@@ -11,12 +14,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "Welcome API to Home",
-    author: "Usman Tahir",
-  });
-});
+app.use("/", home);
+app.use("/tretton", tretton);
 
 const port = process.env.port || 8081;
 
