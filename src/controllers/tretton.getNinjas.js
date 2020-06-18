@@ -11,7 +11,7 @@ async function getNinjas(req, res) {
   if (!pageSize) pageSize = 10;
 
   const startIndex = pageNumber * pageSize;
-  const endIndex = startIndex + pageSize - 1;
+  const endIndex = startIndex + pageSize;
   const prepareResponse = () => ({
     pageNumber,
     pageSize,
