@@ -13,8 +13,8 @@ async function getNinjas(req, res) {
   const startIndex = pageNumber * pageSize;
   const endIndex = startIndex + pageSize;
   const prepareResponse = () => ({
-    pageNumber,
-    pageSize,
+    pageNumber: parseInt(pageNumber),
+    pageSize: parseInt(pageSize),
     length: allNinjas.length,
     data: allNinjas.slice(startIndex, endIndex),
   });
